@@ -6,7 +6,7 @@ from music import *
 repetitions = 4      # times to repeat drum pattern
  
 ##### define the data structure
-score = Score("Rhythm Section Pattern", 80.0) # tempo is 80 bpm
+score = Score("Rhythm Section Pattern", 90.0) # tempo is 80 bpm
  
 # Drum Part (Channel 9)
 drumsPart = Part("Drums", 0, 9)
@@ -39,13 +39,13 @@ snareDrumPhrase.addNoteList(snarePitches, snareDurations)
 #snareDrumPhrase.addNoteList(snarePitches2, snareDurations2)
 
 # hi-hat pattern intro                           # Patrón de hihat para 4 compases introductorios con solo bombo y hihat
-hiHatPitchesIntro   = [CHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, OHH, CHH, CHH, OHH, CHH] * 16
-hiHatDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 16
+hiHatPitchesIntro   = [CHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, OHH, CHH, CHH, OHH, CHH] * 4
+hiHatDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 hiHatPhrase.addNoteList(hiHatPitchesIntro, hiHatDurationsIntro) 
 
 # hi-hat pattern
-hiHatPitches   = [CHH] * 64                  # Patrón de hihat para versos
-hiHatDurations = [SN] * 64
+hiHatPitches   = [CHH] * 16                  # Patrón de hihat para versos
+hiHatDurations = [SN] * 16
 hiHatPhrase.addNoteList(hiHatPitches, hiHatDurations)
 
 # hi-hat pattern 2                           # Patrón de hihat para coro
