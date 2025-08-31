@@ -1,5 +1,7 @@
 # Sintetizador
 
+# Composición original para AI Song Contest
+
 # SE INCLUYE SECCIÓN DE PERCUSIÓN PARA ACOMPAÑAR MIENTRAS SE COMPONE
 
 from music import *
@@ -16,9 +18,9 @@ bassDrumPhrase = Phrase(0.0)
 snareDrumPhrase = Phrase(0.0)
 hiHatPhrase = Phrase(0.0)
 
-# Bass Part (Channel 1, Acoustic Bass)
-bassPart = Part("Synth", SYNTH_BRASS2, 1)
-bassPhrase = Phrase(0.0)
+# Synth Part (Channel 1, Bass Lead )
+SynthPart = Part("Synth", 87, 1)
+SynthPhrase = Phrase(0.0)
  
 ##### create musical data
  
@@ -38,32 +40,32 @@ hiHatDurations = [SN] * 16
 hiHatPhrase.addNoteList(hiHatPitches, hiHatDurations)
 
 # Synth line pattern intro
-SynthPitchesIntro   = [F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, 44 ,REST] * 4  # Patrón del synth para intro y outro
+SynthPitchesIntro   = [F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, 42 ,REST] * 4  # Patrón del synth para intro y outro
 SynthDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
-bassPhrase.addNoteList(SynthPitchesIntro, SynthDurationsIntro)
+SynthPhrase.addNoteList(SynthPitchesIntro, SynthDurationsIntro)
 
 # Synth line pattern verse
 SynthPitches1 = [F2, F2, F2, F2, F2, F2, 44, 44] * 4         # Patrón del synth para versos
 SynthDurations1 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
-bassPhrase.addNoteList(SynthPitches1, SynthDurations1) 
+SynthPhrase.addNoteList(SynthPitches1, SynthDurations1) 
 
 SynthPitches2 = [G2, G2, G2, G2, G2, G2, 46, 46] * 4
 SynthDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
-bassPhrase.addNoteList(SynthPitches2, SynthDurations2) 
+SynthPhrase.addNoteList(SynthPitches2, SynthDurations2) 
 
 ##### repeat material as needed
 Mod.repeat(bassDrumPhrase, repetitions)
 Mod.repeat(hiHatPhrase, repetitions)
-Mod.repeat(bassPhrase, repetitions)
+Mod.repeat(SynthPhrase, repetitions)
  
 ##### combine musical material
 drumsPart.addPhrase(bassDrumPhrase)
 drumsPart.addPhrase(hiHatPhrase)
 
-bassPart.addPhrase(bassPhrase)
+SynthPart.addPhrase(SynthPhrase)
 
 score.addPart(drumsPart)
-score.addPart(bassPart)
+score.addPart(SynthPart)
  
 ##### view, play, and write to file
 # View.sketch(score)
