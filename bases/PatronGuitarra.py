@@ -56,7 +56,7 @@ drumsPart.addPhrase(hiHatPhrase)
 
 GuitarPart.addPhrase(GuitarPhrase)
 
-score.addPart(drumsPart)
+# score.addPart(drumsPart)
 score.addPart(GuitarPart)
 
  
