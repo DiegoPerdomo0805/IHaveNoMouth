@@ -151,26 +151,53 @@ createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()+8.0)
 createPhrase(kickList,bassPitches,bassDurations,new_phrase())
 createPhrase(snareList,snarePitches,snareDurations,current_phrase())
 createPhrase(hiHatList,hiHatPitchesChorus,hiHatDurationsChorus, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()) # empieza 13 
+createPhrase(guitarList, GuitarPitches1, GuitarDurations1, current_phrase()+8.0) # termina 16
 
 # VERSO 2
+# 9 a 12
 createPhrase(kickList,bassPitches,bassDurations,new_phrase())
 createPhrase(snareList,snarePitches,snareDurations,current_phrase())
 createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()+8.0) # empieza en el 10 pero termina en el 12
+
+# 13 a 16
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()) # empieza 13 
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()+8.0) # termina 16
+
 
 # PUENTE
 createPhrase(kickList,bassPitches,bassDurations,new_phrase())
 createPhrase(snareList,snarePitches,snareDurations,current_phrase())
 createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesIntro, SynthDurationsIntro, current_phrase())
+
 
 # CORO 2
 createPhrase(kickList,bassPitches,bassDurations,new_phrase())
 createPhrase(snareList,snarePitches,snareDurations,current_phrase())
 createPhrase(hiHatList,hiHatPitchesChorus,hiHatDurationsChorus, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()) # empieza 13 
+createPhrase(guitarList, GuitarPitches1, GuitarDurations1, current_phrase()+8.0) # termina 16
 
 # OUTRO
 createPhrase(kickList,bassPitches,bassDurations,new_phrase())
 createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesIntro,hiHatDurationsIntro, current_phrase())
+createPhrase(synthList, SynthPitchesIntro, SynthDurationsIntro, current_phrase())
+
+# 5 a 8
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
 createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesIntro, SynthDurationsIntro, current_phrase())
 
 
 
