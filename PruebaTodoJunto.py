@@ -19,6 +19,8 @@ SynthPhrase = Phrase(0.0)
 GuitarPart = Part("Guitar", 30, 1)
 GuitarPhrase = Phrase(8.0)
 
+# 8
+
 ##### create musical data
  
 # bass drum pattern
@@ -26,11 +28,13 @@ GuitarPhrase = Phrase(8.0)
 bassPitches   = [BDR, BDR, BDR, BDR] * 32          # El bombo nunca cambia
 bassDurations = [QN, QN, QN, QN] * 32
 bassDrumPhrase.addNoteList(bassPitches, bassDurations)
+# 128
 
 # snare drum pattern  
 snarePitches   = [REST, SNR, REST, SNR, SNR, REST, REST, SNR, REST, SNR, REST, SNR] * 2
 snareDurations = [QN, QN, QN, SN, SN, EN, QN, QN, SN, SN, EN, QN] * 2
 snareDrumPhrase.addNoteList(snarePitches, snareDurations)
+# 32
 
 # Compases individuales del patrón anterior de redoblante, por si se necesitara 
 
@@ -48,39 +52,50 @@ snareDrumPhrase.addNoteList(snarePitches, snareDurations)
 hiHatPitchesIntro   = [CHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, OHH, CHH, CHH, OHH, CHH] * 4
 hiHatDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 hiHatPhrase.addNoteList(hiHatPitchesIntro, hiHatDurationsIntro) 
+# 16 
 
 # hi-hat pattern
 hiHatPitches   = [CHH] * 16                  # Patrón de hihat para versos
 hiHatDurations = [SN] * 16
 hiHatPhrase.addNoteList(hiHatPitches, hiHatDurations)
+# 4
 
 # hi-hat pattern 2                           # Patrón de hihat para coro
 hiHatPitches   = [CHH, OHH] * 16
 hiHatDurations = [EN, EN] * 16
 hiHatPhrase.addNoteList(hiHatPitches, hiHatDurations)
+# 16
 
 # Synth line pattern intro
 SynthPitchesIntro   = [F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, 42 ,REST] * 4  # Patrón del synth para intro y outro
 SynthDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 SynthPhrase.addNoteList(SynthPitchesIntro, SynthDurationsIntro)
+# 16
 
 # Synth line pattern verse
 SynthPitches1 = [F2, F2, F2, F2, F2, F2, 44, 44] * 4         # Patrón del synth para versos
 SynthDurations1 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 SynthPhrase.addNoteList(SynthPitches1, SynthDurations1) 
+# 8
 
 SynthPitches2 = [G2, G2, G2, G2, G2, G2, 46, 46] * 4
 SynthDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 SynthPhrase.addNoteList(SynthPitches2, SynthDurations2) 
+# 8
+
+
+
 
 # Guitar line pattern verse
 GuitarPitches1 = [F2, F2, 44, G2, E2, E2, REST, E2, E2] * 2
 GuitarDurations1 = [WN, WN, WN, HN, QN, EN, SN, 0.125,0.125] * 2
 GuitarPhrase.addNoteList(GuitarPitches1, GuitarDurations1) 
+# 32
 
 GuitarPitches2 = [F2, F2, F2, F2, F2, F2, F2, F2, 44, 44, 44, 44, 44, 44, 44, 44, G2, G2, G2, G2, G2, G2, G2, G2, E2, E2, E2, E2, E2, E2, E2, E2 ] * 4         # Patrón de guitarra para coros
 GuitarDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 GuitarPhrase.addNoteList(GuitarPitches2, GuitarDurations2) 
+# 32
 
 ##### repeat material as needed
 Mod.repeat(bassDrumPhrase, repetitions)

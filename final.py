@@ -33,17 +33,17 @@ score = Score("Rhythm Section Pattern", 90.0) # tempo is 80 bpm
  
 # Drum Part (Channel 9)
 drumsPart = Part("Drums", 0, 9)
-bassDrumPhrase = Phrase(0.0)
-snareDrumPhrase = Phrase(0.0)
-hiHatPhrase = Phrase(0.0)
+# bassDrumPhrase = Phrase(0.0)
+# snareDrumPhrase = Phrase(0.0)
+# hiHatPhrase = Phrase(0.0)
 
 # Synth Part (Channel 1, Bass Lead )
 SynthPart = Part("Synth", 87, 1)
-SynthPhrase = Phrase(0.0)
+# SynthPhrase = Phrase(0.0)
 
 # Guitar Part (Channel 2, Electric Guitar)
 GuitarPart = Part("Guitar", 30, 1)
-GuitarPhrase = Phrase(8.0)
+# GuitarPhrase = Phrase(8.0)
 
 ### NOTAS Y DURACIONES
 
@@ -83,6 +83,10 @@ SynthDurations1 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 SynthPitches2 = [G2, G2, G2, G2, G2, G2, 46, 46] * 4
 SynthDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 
+# 4 COMPASES
+SynthPitchesVerse = SynthPitches1 + SynthPitches2
+SynthDurationsVerse = SynthDurations1 + SynthDurations2
+
 
 
 
@@ -90,12 +94,12 @@ SynthDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 
 # Guitar line pattern verse
 # 4 COMPASES
-GuitarPitches1 = [F2, F2, 44, G2, E2, E2, REST, E2, E2] * 2
-GuitarDurations1 = [WN, WN, WN, HN, QN, EN, SN, SN/2,SN/2] * 2
+GuitarPitches1 = [F2, F2, 44, G2, E2, E2, REST, E2, E2]
+GuitarDurations1 = [WN, WN, WN, HN, QN, EN, SN, SN/2,SN/2]
 
-# 4 COMPASES
-GuitarPitches2 = [F2, F2, F2, F2, F2, F2, F2, F2, 44, 44, 44, 44, 44, 44, 44, 44, G2, G2, G2, G2, G2, G2, G2, G2, E2, E2, E2, E2, E2, E2, E2, E2 ] * 2 #* 4         # Patrón de guitarra para coros
-GuitarDurations2 = [SN] * 32 * 2
+# 2 COMPASES
+GuitarPitches2 = [F2, F2, F2, F2, F2, F2, F2, F2, 44, 44, 44, 44, 44, 44, 44, 44, G2, G2, G2, G2, G2, G2, G2, G2, E2, E2, E2, E2, E2, E2, E2, E2 ]#* 4         # Patrón de guitarra para coros
+GuitarDurations2 = [SN] * 32
 
 
 
@@ -111,21 +115,75 @@ guitarList = []
 
 
 # INTRO
+# COMPAS 1 A 4 
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesIntro,hiHatDurationsIntro, current_phrase())
+createPhrase(synthList, SynthPitchesIntro, SynthDurationsIntro, current_phrase())
+createPhrase(guitarList, GuitarPitches1, GuitarDurations1, current_phrase() + 8.0) # empieza en el segundo
+
+# 5 a 8
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesIntro, SynthDurationsIntro, current_phrase())
+createPhrase(guitarList, GuitarPitches1, GuitarDurations1, current_phrase() + 8.0) # empieza en el sexto
 
 
 # VERSO 1 
+# 9 a 12
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()+8.0) # empieza en el 10 pero termina en el 12
+
+# 13 a 16
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+createPhrase(synthList, SynthPitchesVerse, SynthDurationsVerse, current_phrase())
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()) # empieza 13 
+createPhrase(guitarList, GuitarPitches2, GuitarDurations2, current_phrase()+8.0) # termina 16
 
 
 # CORO 1
-
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesChorus,hiHatDurationsChorus, current_phrase())
 
 # VERSO 2
-
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
 
 # PUENTE
-
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
 
 # CORO 2
-
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesChorus,hiHatDurationsChorus, current_phrase())
 
 # OUTRO
+createPhrase(kickList,bassPitches,bassDurations,new_phrase())
+createPhrase(snareList,snarePitches,snareDurations,current_phrase())
+createPhrase(hiHatList,hiHatPitchesVerse,hiHatDurationsVerse, current_phrase())
+
+
+
+
+# POBLADO
+populatePart(drumsPart, kickList)
+populatePart(drumsPart, snareList)
+populatePart(drumsPart, hiHatList)
+populatePart(SynthPart, synthList)
+populatePart(GuitarPart, guitarList)
+
+score.addPart(drumsPart)
+score.addPart(SynthPart)
+score.addPart(GuitarPart)
+
+Play.midi(score)
