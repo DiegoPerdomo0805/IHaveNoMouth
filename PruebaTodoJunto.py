@@ -22,6 +22,7 @@ GuitarPhrase = Phrase(8.0)
 ##### create musical data
  
 # bass drum pattern
+# 32 compases
 bassPitches   = [BDR, BDR, BDR, BDR] * 32          # El bombo nunca cambia
 bassDurations = [QN, QN, QN, QN] * 32
 bassDrumPhrase.addNoteList(bassPitches, bassDurations)

@@ -2,7 +2,7 @@ from music import *    # import music library
 
  
 phrase_counter = 0
-phrase_length = 2 * 4 # 2 compases de duración de 4
+phrase_length = 4 * 4 # 2 compases de duración de 4
 
 def new_phrase():
     global phrase_counter
@@ -49,30 +49,30 @@ GuitarPhrase = Phrase(8.0)
 
 ##### BATERÍA
 
-# 2 compases
-bassPitches   = [BDR, BDR, BDR, BDR] * 2
-bassDurations = [QN, QN, QN, QN] * 2
-# 2 compases
-snarePitches   = [REST, SNR, REST, SNR, SNR, REST, REST, SNR, REST, SNR, REST, SNR]
-snareDurations = [QN, QN, QN, SN, SN, EN, QN, QN, SN, SN, EN, QN]
-# 2 compases
-hiHatPitchesIntro   = [CHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, OHH, CHH, CHH, OHH, CHH] * 2
-hiHatDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 2
+# 4 compases
+bassPitches   = [BDR, BDR, BDR, BDR] * 4
+bassDurations = [QN, QN, QN, QN] * 4
+# 4 compases
+snarePitches   = [REST, SNR, REST, SNR, SNR, REST, REST, SNR, REST, SNR, REST, SNR] * 2
+snareDurations = [QN, QN, QN, SN, SN, EN, QN, QN, SN, SN, EN, QN] * 2
+# 4 compases
+hiHatPitchesIntro   = [CHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, CHH, OHH, CHH, OHH, CHH, CHH, OHH, CHH] * 4
+hiHatDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 # 1 compas
 hiHatPitchesVerse   = [CHH] * 16
 hiHatDurationsVerse = [SN] * 16
-# 2 compases
-hiHatPitchesChorus   = [CHH, OHH] * 4 # * 4
-hiHatDurationsChorus = [EN, EN] * 4 # * 4
+# 4 compases
+hiHatPitchesChorus   = [CHH, OHH] * 4 * 4
+hiHatDurationsChorus = [EN, EN] * 4 * 4
 
 
 
 ##### SINTETIZADOR
 
 # Synth line pattern intro
-# 2 COMPASES
-SynthPitchesIntro   = [F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, 42 ,REST] * 2# * 4  # Patrón del synth para intro y outro
-SynthDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 2# * 4
+# 4 COMPASES
+SynthPitchesIntro   = [F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, REST, F2, REST, 42 ,REST] * 4  # Patrón del synth para intro y outro
+SynthDurationsIntro = [SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN, SN] * 4
 
 # Synth line pattern verse
 # 2 COMPASES
@@ -84,21 +84,48 @@ SynthPitches2 = [G2, G2, G2, G2, G2, G2, 46, 46] * 4
 SynthDurations2 = [SN, SN, SN, SN, SN, SN, SN, SN] * 4
 
 
+
+
 ##### GUITARRA
 
-
 # Guitar line pattern verse
-# 4 COMPASES - NECESARIO SEPARAR.
-# GuitarPitches1 = [F2, F2, 44, G2, E2, E2, REST, E2, E2] * 2
-# GuitarDurations1 = [WN, WN, WN, HN, QN, EN, SN, SN/2,SN/2] * 2
+# 4 COMPASES
+GuitarPitches1 = [F2, F2, 44, G2, E2, E2, REST, E2, E2] * 2
+GuitarDurations1 = [WN, WN, WN, HN, QN, EN, SN, SN/2,SN/2] * 2
 
-# 2 COMPASES - SECCIÓN 1 DE 2
-GuitarPitches1_1 = [F2, F2]
-GuitarDurations1_1 = [WN, WN]
-# 2 COMPASES - SECIÓN 2 DE 2
-GuitarPitches1_2 = [44, G2, E2, E2, REST, E2, E2]
-GuitarDurations1_2 = [WN, HN, QN, EN, SN, SN/2,SN/2]
+# 4 COMPASES
+GuitarPitches2 = [F2, F2, F2, F2, F2, F2, F2, F2, 44, 44, 44, 44, 44, 44, 44, 44, G2, G2, G2, G2, G2, G2, G2, G2, E2, E2, E2, E2, E2, E2, E2, E2 ] * 2 #* 4         # Patrón de guitarra para coros
+GuitarDurations2 = [SN] * 32 * 2
 
-# 2 COMPASES
-GuitarPitches2 = [F2, F2, F2, F2, F2, F2, F2, F2, 44, 44, 44, 44, 44, 44, 44, 44, G2, G2, G2, G2, G2, G2, G2, G2, E2, E2, E2, E2, E2, E2, E2, E2 ] # * 4         # Patrón de guitarra para coros
-GuitarDurations2 = [SN] * 32
+
+
+
+######  ENSAMBLE
+
+hiHatList = []
+snareList = []
+kickList = []
+synthList = []
+guitarList = []
+
+
+
+# INTRO
+
+
+# VERSO 1 
+
+
+# CORO 1
+
+
+# VERSO 2
+
+
+# PUENTE
+
+
+# CORO 2
+
+
+# OUTRO
